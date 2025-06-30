@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness Activity Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 400px; margin: auto; }
+        input, button { margin: 5px 0; padding: 7px; width: 100%; }
+        .result { background: #f0f0f0; padding: 15px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Predict Activity from Accelerometer Data</h2>
+        <form method="post">
+            <label for="x">X:</label>
+            <input type="number" step="any" name="x" id="x" required>
+            <label for="y">Y:</label>
+            <input type="number" step="any" name="y" id="y" required>
+            <label for="z">Z:</label>
+            <input type="number" step="any" name="z" id="z" required>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+        <div class="result">
+            {{ prediction }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
